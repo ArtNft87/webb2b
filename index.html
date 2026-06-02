@@ -11,6 +11,7 @@
         :root {
             --bg-main: #050505;
             --bg-card: #111111;
+            --bg-lighter: #1a1a1a;
             --text-main: #ffffff;
             --text-dim: #8e8e93;
             --brand-yellow: #facc15;
@@ -144,6 +145,40 @@
             margin: 0;
         }
 
+        .integration {
+            padding: 120px 0;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .step-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .step-box {
+            background-color: var(--bg-lighter);
+            padding: 30px 40px;
+            border-radius: 6px;
+            border-left: 4px solid var(--brand-yellow);
+        }
+
+        .step-box h4 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .step-box p {
+            margin: 0;
+            color: var(--text-dim);
+            font-size: 15px;
+            font-weight: 300;
+        }
+
         .numbers {
             background-color: var(--brand-yellow);
             color: var(--bg-main);
@@ -169,6 +204,45 @@
             letter-spacing: 1px;
             margin: 0;
             font-weight: 500;
+        }
+
+        .founder-block {
+            padding: 120px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .founder-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            padding: 60px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .founder-content p.quote {
+            font-size: 20px;
+            font-weight: 300;
+            color: var(--text-main);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .founder-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--brand-yellow);
+            margin: 0 0 5px 0;
+        }
+
+        .founder-content p.title {
+            font-size: 14px;
+            color: var(--text-dim);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .statement {
@@ -262,6 +336,30 @@
         </div>
     </div>
 
+    <div class="integration">
+        <div class="container">
+            <div class="section-title">Integrate once. Scale across Europe seamlessly.</div>
+            <div class="step-container">
+                <div class="step-box">
+                    <h4>1. Live Data Sync</h4>
+                    <p>Generate an XML or API file with our current live offer, photos, and all necessary product information.</p>
+                </div>
+                <div class="step-box">
+                    <h4>2. Automated Pricing</h4>
+                    <p>Keep your store stock and retail prices completely automated by simply adding your target margin.</p>
+                </div>
+                <div class="step-box">
+                    <h4>3. Instant Reservations</h4>
+                    <p>Use our automated backend interface to instantly place orders and reserve sold products.</p>
+                </div>
+                <div class="step-box">
+                    <h4>4. Frictionless Logistics</h4>
+                    <p>Thanks to our optimized shipping lines, we send any parcel directly to your customer in any EU country.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="numbers">
         <div class="container">
             <div class="grid-stats">
@@ -281,6 +379,16 @@
                     <h2>17</h2>
                     <p>Years</p>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="founder-block">
+        <div class="container">
+            <div class="founder-content">
+                <p class="quote">My team is not here to manage tickets, we are here to manage outcomes. If the feed says it is in stock, it ships today. If a problem occurs, you can reach out directly to a human with a name who will sort it out. That is just how we work.</p>
+                <h4>Adrian</h4>
+                <p class="title">Ecommerce Sales Director</p>
             </div>
         </div>
     </div>
