@@ -8,10 +8,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-main: #050505;
+            --bg-card: #111111;
+            --text-main: #ffffff;
+            --text-dim: #8e8e93;
+            --brand-yellow: #facc15;
+            --border-color: #222222;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a;
-            color: #ffffff;
+            background-color: var(--bg-main);
+            color: var(--text-main);
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -23,44 +32,83 @@
             padding: 0 20px;
         }
 
+        .header {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--brand-yellow);
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-outline {
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .btn-solid {
+            background-color: var(--brand-yellow);
+            color: var(--bg-main);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
         .hero {
-            background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.98)), url('image_998c28.jpg');
-            background-size: cover;
-            background-position: center;
+            background: radial-gradient(circle at top, #1a1a1a 0%, #050505 70%);
             text-align: center;
             padding: 140px 0 100px 0;
-            border-bottom: 1px solid #222222;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero h1 {
-            font-size: 42px;
+            font-size: 48px;
             font-weight: 300;
             letter-spacing: -1px;
             max-width: 900px;
             margin: 0 auto 30px auto;
+            line-height: 1.2;
         }
 
         .hero p {
             font-size: 18px;
-            color: #8e8e93;
+            color: var(--text-dim);
             max-width: 700px;
             margin: 0 auto;
             font-weight: 300;
         }
 
         .advantages {
-            background-image: linear-gradient(rgba(15, 15, 15, 0.95), rgba(15, 15, 15, 0.99)), url('image_99909b.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 0;
-            border-bottom: 1px solid #222222;
+            padding: 120px 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .section-title {
             font-size: 28px;
             font-weight: 400;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
 
         .grid-4 {
@@ -70,10 +118,15 @@
         }
 
         .card {
-            background-color: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333333;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
             padding: 40px 30px;
-            border-radius: 6px;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--brand-yellow);
         }
 
         .card h3 {
@@ -81,175 +134,172 @@
             font-weight: 500;
             margin-top: 0;
             margin-bottom: 15px;
-            color: #d4af37;
+            color: var(--brand-yellow);
         }
 
         .card p {
-            color: #8e8e93;
-            font-size: 14px;
+            color: var(--text-dim);
+            font-size: 15px;
             font-weight: 300;
             margin: 0;
         }
 
-        .visual-block {
+        .numbers {
+            background-color: var(--brand-yellow);
+            color: var(--bg-main);
             padding: 80px 0;
             text-align: center;
-            border-bottom: 1px solid #222222;
         }
 
-        .visual-block img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
+        .grid-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
         }
 
-        .label {
-            color: #8e8e93;
-            font-size: 12px;
+        .stat-item h2 {
+            font-size: 42px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+        }
+
+        .stat-item p {
+            font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            display: block;
-        }
-
-        .models {
-            background-image: linear-gradient(rgba(10, 10, 10, 0.92), rgba(10, 10, 10, 0.98)), url('image_999026.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 0;
-            border-bottom: 1px solid #222222;
+            letter-spacing: 1px;
+            margin: 0;
+            font-weight: 500;
         }
 
         .statement {
-            padding: 120px 0;
+            padding: 140px 0;
             text-align: center;
-            background-color: #050505;
-            border-bottom: 1px solid #222222;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .statement blockquote {
-            font-size: 28px;
+        .statement p {
+            font-size: 32px;
             font-weight: 300;
-            font-style: italic;
             max-width: 800px;
             margin: 0 auto;
-            color: #ffffff;
+            color: var(--text-main);
             line-height: 1.4;
         }
 
-        .statement blockquote span {
-            color: #d4af37;
+        .statement p span {
+            color: var(--brand-yellow);
         }
 
-        footer {
-            background-image: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.98)), url('image_998c5f.jpg');
-            background-size: cover;
-            background-position: center;
+        .footer {
             padding: 100px 0 60px 0;
             text-align: center;
         }
 
-        footer h2 {
+        .footer h2 {
             font-size: 32px;
             font-weight: 400;
             margin-bottom: 20px;
         }
 
-        footer p {
-            color: #8e8e93;
+        .footer p {
+            color: var(--text-dim);
             margin-bottom: 40px;
             font-weight: 300;
         }
 
-        .btn-final {
-            background-color: #ffffff;
-            color: #0a0a0a;
-            padding: 15px 40px;
+        .btn-large {
+            background-color: var(--text-main);
+            color: var(--bg-main);
+            padding: 18px 45px;
             border-radius: 4px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             display: inline-block;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
 
-    <section class="hero">
+    <div class="header">
+        <div class="container" style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+            <div class="logo">B2B<span>sports</span></div>
+            <div class="nav">
+                <a href="#" class="btn-outline">Login</a>
+                <a href="#" class="btn-solid">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
         <div class="container">
-            <h1>Build your sports store on stock you can trust, a feed that doesnt lie, and people who answer.</h1>
+            <h1>Build your sports store on stock you can trust, a feed that does not lie, and people who answer.</h1>
             <p>We know exactly what it costs your business when a supplier fails you. Sportprofis is a European wholesale partner designed around operational certainty.</p>
         </div>
-    </section>
+    </div>
 
-    <section class="advantages">
+    <div class="advantages">
         <div class="container">
             <div class="section-title">Our Standard is Certainty. Not Promises.</div>
             <div class="grid-4">
                 <div class="card">
                     <h3>Real Stock</h3>
-                    <p>If it says it is in stock, it is in stock. No ghost inventory.</p>
+                    <p>If it says it is in stock, it is in stock. No ghost inventory and no unexpected cancellations.</p>
                 </div>
                 <div class="card">
                     <h3>Same Day Dispatch</h3>
-                    <p>Every order placed before 3:00 PM CET ships the exact same day.</p>
+                    <p>Every order placed before 3:00 PM CET ships the exact same day without delays.</p>
                 </div>
                 <div class="card">
                     <h3>Live Data Feed</h3>
-                    <p>Automated XML and API connections updated in real time.</p>
+                    <p>Automated XML and API connections updated in real time for total peace of mind.</p>
                 </div>
                 <div class="card">
                     <h3>Human Support</h3>
-                    <p>A dedicated business partner with a name solves your issues.</p>
+                    <p>A dedicated business partner with a name solves your issues directly over the phone.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="visual-block" style="background-color: #111111;">
+    <div class="numbers">
         <div class="container">
-            <span class="label">Numbers you can build on</span>
-            <img src="image_999062.png" alt="Statistics" style="filter: invert(1) hue-rotate(180deg) brightness(0.8);">
-        </div>
-    </section>
-
-    <section class="models">
-        <div class="container">
-            <div class="section-title">Integrate once. Scale across Europe seamlessly.</div>
-            <div style="text-align: center; margin-top: 40px;">
-                <img src="image_999001.jpg" alt="Process Flow" style="background-color: #ffffff; padding: 20px; border-radius: 8px;">
+            <div class="grid-stats">
+                <div class="stat-item">
+                    <h2>131,495</h2>
+                    <p>Products</p>
+                </div>
+                <div class="stat-item">
+                    <h2>383,923</h2>
+                    <p>Orders</p>
+                </div>
+                <div class="stat-item">
+                    <h2>20</h2>
+                    <p>EU Countries</p>
+                </div>
+                <div class="stat-item">
+                    <h2>17</h2>
+                    <p>Years</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="visual-block" style="background-color: #0a0a0a;">
+    <div class="statement">
         <div class="container">
-            <span class="label">Transparent Logistics</span>
-            <img src="image_998fc1.png" alt="Logistics Widget" style="border: 1px solid #333333;">
-        </div>
-    </section>
-
-    <section class="statement">
-        <div class="container">
-            <blockquote>
+            <p>
                 We carry the stock, the feed, and the problem <span>so you carry nothing but the sale.</span>
-            </blockquote>
+            </p>
         </div>
-    </section>
+    </div>
 
-    <section class="visual-block" style="background-color: #121212;">
+    <div class="footer">
         <div class="container">
-            <span class="label">Partnership Approach</span>
-            <img src="image_998c83.jpg" alt="Adrian Founder">
+            <h2>Ready to scale your store?</h2>
+            <p>Create your free partner account today and connect to a supply chain built on certainty.</p>
+            <a href="#" class="btn-large">Create Free Account</a>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <h2>Ready to get started?</h2>
-            <p>Create your free B2B partner account today and connect your store to a supply chain built on certainty.</p>
-            <a href="#" class="btn-final">Create Free Account</a>
-        </div>
-    </footer>
+    </div>
 
 </body>
 </html>
